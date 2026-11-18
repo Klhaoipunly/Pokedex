@@ -16,7 +16,7 @@ for pokemon in data:
 # Develop a function that creates a new list of pokemon based on the type the user searched for. If no pokemon was found of that type inform the user
 def type(pokemon_data):
     search = input("Input a type: ").strip().capitalize()
-    matching = []
+    matching =  
     if matching:
         for pokemon in matching:
             print(pokemon["name"]["english"])

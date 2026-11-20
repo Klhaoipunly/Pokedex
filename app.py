@@ -35,19 +35,16 @@ def search_by_name(pokedata):
     search = input("Input the name of a pokemon: ").strip().capitalize()
     match = []
     for p in pokedata:
-        Uppercasename = p["name"][language].lower
-        if "name" in p:
-            if search in p["name"]:
-                match.append(p)
-        if match:
-            for pokemon in match:
-                print(pokemon["name"][language])
+        Uppercasename = p["name"][language].lower()
+        if search in Uppercasename:
+            match.append(p)
+    if match:
+        for pokemon in match:
+            print(pokemon["name"][language])
         else:
             print("No pokemon were found")
         return match
 search_by_name(data)
 
 #Based on user input, show all moves that a pokemon could learn based on their type. For example, if Charizard is fire/fyling, show all fire and flying moves. HINT import the moves.json file too!xxxxxxx
-
-
 

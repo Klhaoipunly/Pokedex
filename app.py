@@ -31,6 +31,7 @@ def search_by_type(pokedata):
     else:
         print("No pokemon were found")
     return match
+    
 search_by_type(data)
           
 #Develop a function to find all pokemon matching the name the user searched for. Ex. if "Char" return Charmander, Charmeleon and Charizard. Make the user aware if no pokemon was found.
@@ -52,5 +53,18 @@ search_by_name(data)
 
 #Based on user input, show all moves that a pokemon could learn based on their type. For example, if Charizard is fire/fyling, show all fire and flying moves. HINT import the moves.json file too!xxxxxxx
 
-def search_moves(movesdata):
-    
+def search_by_type(pokedata):
+    search = input("Input a pokemon to find their type: ").strip().capitalize()
+    match = []
+    for p in pokedata:
+        name = p["name"][language].lower()
+        if search in name:
+            match.append(p)
+    if match:
+        for pokemon in match:
+            print(pokemon["type"][language])
+        else:
+            print("No pokemon were found")
+        return match
+
+search_by_type(data)

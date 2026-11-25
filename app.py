@@ -18,6 +18,7 @@ language = input("Input a language (English, Chinese, Japanese or French): ")
 for pokemon in data:
     print(pokemon["name"][language])
 # Develop a function that creates a new list of pokemon based on the type the user searched for. If no pokemon was found of that type inform the user
+
 def search_by_type(pokedata):
     search = input("Input a type: ").strip().capitalize()
     match = []
@@ -57,12 +58,12 @@ def search_by_type(pokedata):
     search = input("Input a pokemon to find their type: ").strip().capitalize()
     match = []
     for p in pokedata:
-        name = p["name"][language].lower()
-        if search in name:
+        type = p["type"]
+        if search in type:
             match.append(p)
     if match:
         for pokemon in match:
-            print(pokemon["type"][language])
+            print(pokemon["type"])
         else:
             print("No pokemon were found")
         return match
